@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Intersection Observer Issue</title>
+  <style>
+    .margin-line {
+      position: fixed;
+      width: 100%;
+      border: 1px solid teal;
+    }
+
+    .spacer {
+      width: 100%;
+      height: 300px;
+      background: antiquewhite;
+    }
+
+    .triangle {
+      width: 0;
+      height: 0;
+      margin: 0 auto;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 16px solid red;
+    }
+
+    .controls {
+      padding: 8px;
+      background: #e8e8e8;
+      display: inline-block;
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      border: 1px solid #bbb;
+      font-family: helvetica, ariel, sans-serif;
+      font-size: 11px;
+    }
+
+    dt,
+    dd {
+      display: inline;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="margin-line"></header>
+  <div class="spacer"></div>
+  <div class="triangle"></div>
+  <div class="spacer"></div>
+  <div class="spacer"></div>
+  <div class="spacer"></div>
+  <div class="controls">
+    <dl>
+      <dt>Observer top margin:</dt>
+      <dd id="margin-readout"></dd>
+      <br />
+      <dt>Last intersection position:</dt>
+      <dd id="intersection-readout"></dd>
+    </dl>
+    <form action="">
+      <input id="range" type="range" min="0" max="200" value="100">
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
